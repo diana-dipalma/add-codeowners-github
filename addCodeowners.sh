@@ -1,12 +1,12 @@
 helpFunction()
 {
    echo ""
-   echo "Usage: $0 -pat ghPersonalAccessToken -t team-name -u user-name -o org -ab azureWorkItemNumber"
-   echo -e "\t-pat provide a personal access token from your github account"
+   echo "Usage: $0 -p ghPersonalAccessToken -t team-name -u user-name -o org -a azureWorkItemNumber"
+   echo -e "\t-p provide a personal access token from your github account"
    echo -e "\t-t The github team name, such as 'flight-search' (do not include the '@')"
    echo -e "\t-u Your github username (do not include the '@')"
    echo -e "\t-o The github org where your team's repos can be found (such as, 'Alaska-ECommerce')"
-   echo -e "\t-ab The work item number to be added to your PR for AB Validation (such as '12345')"
+   echo -e "\t-a The work item number to be added to your PR for AB Validation (such as '12345')"
    exit 1 # Exit script after printing help
 }
 
