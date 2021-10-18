@@ -50,8 +50,7 @@ cd "./addCodeowners"
 
 echo "Authenticating w/ PAT"
 
-echo $PAT > ./pat.txt
-gh auth login --with-token < pat.txt
+echo $PAT | gh auth login --with-token
 
 echo "Cloning Team Repos"
 
