@@ -36,7 +36,7 @@ Once you have installed WSL, run the following steps in your linux terminal
       - Make sure you clone the repo using WSL
   
 ## Running The Script
-Execute the following line (replace the variables with your personal/team specific information and make sure your arguments are wrapped in quotes), ``source ./addCodowners.sh -p '$PAT' -u '$USERNAME' -t '$TEAM' -o '$ORG' -a '$AB'``
+Execute the following line (replace the variables with your personal/team specific information and make sure your arguments are wrapped in quotes), ``source ./addCodeowners.sh -p '$PAT' -u '$USERNAME' -t '$TEAM' -o '$ORG' -a '$AB'``
 
 All of the following arguments are required:
  - -p takes your PAT (you will need to make sure you have authorized access to the Alaska-ECommerce org in GitHub)
