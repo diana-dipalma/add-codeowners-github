@@ -10,6 +10,9 @@ helpFunction()
    exit 1 # Exit script after printing help
 }
 
+# Reset in case getopts has been used previously in the shell.
+OPTIND=1
+
 while getopts p:t:u:o:a: opt
 do
    case "$opt" in
