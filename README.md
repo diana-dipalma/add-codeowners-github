@@ -18,6 +18,22 @@ https://stedolan.github.io/jq/
 
 JQ is a lightweight and flexible command-line JSON processor that we use to parse the response from the github APIs.
 
+### Windows Users
+
+To run this script on windows, you will need to use WSL.
+https://docs.microsoft.com/en-us/windows/wsl/install
+
+Once you have installed WSL, run the following steps in your linux terminal
+  1. Install brew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  2. Install git, gh, & jq
+      - `brew install git`
+      - `brew install gh`
+      - `brew install jq`
+  3. Configure Git Credential Manager: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
+  4. Clone the script repo
+      - Make sure the script has permission to execute
+      - Make sure you clone the repo using WSL
+  
 ## Running The Script
 Execute the following line (replace the variables with your personal/team specific information and make sure your arguments are wrapped in quotes), ``source ./addCodowners.sh -p '$PAT' -u '$USERNAME' -t '$TEAM' -o '$ORG' -a '$AB'``
 
