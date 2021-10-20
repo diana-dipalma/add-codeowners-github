@@ -13,6 +13,9 @@ helpFunction()
 # Reset in case getopts has been used previously in the shell.
 OPTIND=1
 
+# used to ensure new lines are printed properly
+alias echo2="echo -e"
+
 while getopts p:t:u:o:a: opt
 do
    case "$opt" in
@@ -81,7 +84,7 @@ for dir in ./* ; do
   if [ -d "$dir" ]; then
     dir=${dir%*/}
     mkdir -p ${dir##*/}/.github
-    echo "# Default owners of everything (i.e. *) in the repository \n* @$ORG/$TEAM" > ./${dir##*/}/.github/CODEOWNERS
+    echo2 "# Default owners of everything (i.e. *) in the repository \n* @$ORG/$TEAM" > ./${dir##*/}/.github/CODEOWNERS
     echo "Updating $dir repo"
     cd ${dir##*/}
     git checkout -b $USERNAME/CODEOWNERS
