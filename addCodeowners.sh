@@ -1,5 +1,3 @@
-#!/bin/bash
-
 helpFunction()
 {
    echo ""
@@ -86,15 +84,14 @@ for dir in ./* ; do
   if [ -d "$dir" ]; then
     dir=${dir%*/}
     mkdir -p ${dir##*/}/.github
-    echo2 "# Default owners of everything (i.e. *) in the repository \n* @$ORG/$TEAM" > ./${dir##*/}/.github/CODEOWNERS
     echo "Updating $dir repo"
     cd ${dir##*/}
-    git checkout -b $USERNAME/CODEOWNERS
+    git checkout $USERNAME/CODEOWNERS 2>/dev/null || git checkout -b $USERNAME/CODEOWNERS
+    echo2 "# Default owners of everything (i.e. *) in the repository \n* @$ORG/$TEAM" > ./.github/CODEOWNERS
     git add .
     git commit -m "Added CODEOWNERS file"
     git push origin $USERNAME/CODEOWNERS
     pr=$(gh pr create --title "Adding CODEOWNERS" --body "AB#$AB" --reviewer "@$ORG/$TEAM" 2>&1)
-    echo $pr
     pr_list+=( "$pr" )
     cd ..
     echo "codeowners pushed to branch, $USERNAME/CODEOWNERS"
