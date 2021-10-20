@@ -29,8 +29,12 @@ Once you have installed WSL, run the following steps in your linux terminal
       - `brew install git`
       - `brew install gh`
       - `brew install jq`
-  3. Configure Git Credential Manager: https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git
-  4. Clone the script repo using https
+  3. Configure [Git config file](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-config-file-setup)
+      - `git config --global user.email "you@example.com"`
+      - `git config --global user.name "Your Name"`
+  4. Configure [Git Credential Manager](https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-git#git-credential-manager-setup)
+      - `git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"`
+  5. Clone the script repo **using https**
       - `git clone https://github.com/diana-dipalma/add-codeowners-github.git`
       - Make sure the script has permission to execute
       - Make sure you clone the repo using WSL
