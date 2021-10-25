@@ -60,7 +60,7 @@ echo $PAT | gh auth login --with-token
 
 echo "Cloning Team Repos"
 
-repos=$(curl -u $TEAM:$PAT -s https://api.github.com/orgs/$ORG/teams/$TEAM/repos | sed 's/ //g')
+repos=$(curl -u $TEAM:$PAT -s https://api.github.com/orgs/$ORG/teams/$TEAM/repos?per_page=100 | sed 's/ //g')
 
 for repo in $(echo "${repos}" | jq -c -r '.[]'); do
    name=$(echo $repo | jq -r '.name')
